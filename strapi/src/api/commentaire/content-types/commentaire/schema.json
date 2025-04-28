@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commentaires",
+  "info": {
+    "singularName": "commentaire",
+    "pluralName": "commentaires",
+    "displayName": "Commentaire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Contenu": {
+      "type": "text",
+      "required": true
+    },
+    "up_vote": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
+    },
+    "down_vote": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
+    }
+  }
+}
