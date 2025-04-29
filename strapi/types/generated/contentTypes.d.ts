@@ -441,6 +441,37 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSubRedditSubReddit extends Struct.CollectionTypeSchema {
+  collectionName: 'sub_reddits';
+  info: {
+    description: '';
+    displayName: 'SubReddit';
+    pluralName: 'sub-reddits';
+    singularName: 'sub-reddit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sub-reddit.sub-reddit'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVoteVote extends Struct.CollectionTypeSchema {
   collectionName: 'votes';
   info: {
@@ -977,6 +1008,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::commentaire.commentaire': ApiCommentaireCommentaire;
       'api::post.post': ApiPostPost;
+      'api::sub-reddit.sub-reddit': ApiSubRedditSubReddit;
       'api::vote.vote': ApiVoteVote;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
