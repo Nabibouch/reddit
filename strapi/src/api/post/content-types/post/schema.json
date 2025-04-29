@@ -21,18 +21,26 @@
       "required": true
     },
     "Photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "like": {
       "type": "integer",
       "required": true,
       "default": 0,
       "min": 0
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "votes": {
+      "type": "integer"
     }
   }
 }
