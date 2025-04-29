@@ -16,6 +16,12 @@
         "upvote",
         "downvote"
       ]
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "vote_lists"
     }
   }
 }

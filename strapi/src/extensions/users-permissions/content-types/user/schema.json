@@ -73,6 +73,12 @@
       "relation": "oneToMany",
       "target": "api::sub-reddit.sub-reddit",
       "mappedBy": "creator"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "author"
     }
   }
 }

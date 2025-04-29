@@ -14,6 +14,12 @@
     "Contenu": {
       "type": "text",
       "required": true
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "comments"
     }
   }
 }
