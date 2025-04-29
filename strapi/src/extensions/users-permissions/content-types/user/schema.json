@@ -67,6 +67,12 @@
     },
     "bio": {
       "type": "text"
+    },
+    "sub_reddits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-reddit.sub-reddit",
+      "mappedBy": "creator"
     }
   }
 }

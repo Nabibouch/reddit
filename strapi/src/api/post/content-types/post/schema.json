@@ -41,6 +41,12 @@
     },
     "votes": {
       "type": "integer"
+    },
+    "sub_reddit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-reddit.sub-reddit",
+      "inversedBy": "posts"
     }
   }
 }
