@@ -85,6 +85,12 @@
       "relation": "oneToMany",
       "target": "api::commentaire.commentaire",
       "mappedBy": "author"
+    },
+    "votes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vote.vote",
+      "mappedBy": "user"
     }
   }
 }
