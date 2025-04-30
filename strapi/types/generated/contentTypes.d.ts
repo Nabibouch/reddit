@@ -400,6 +400,7 @@ export interface ApiCommentaireCommentaire extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    votes: Schema.Attribute.Relation<'oneToMany', 'api::vote.vote'>;
   };
 }
 
@@ -507,6 +508,10 @@ export interface ApiVoteVote extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    commentaire: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::commentaire.commentaire'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
