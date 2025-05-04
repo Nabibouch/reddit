@@ -65,6 +65,18 @@
       "relation": "oneToMany",
       "target": "api::vote.vote",
       "mappedBy": "post"
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag",
+      "mappedBy": "post"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "post"
     }
   }
 }
