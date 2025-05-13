@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "singularName": "topic",
+    "pluralName": "topics",
+    "displayName": "Topic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "sub_reddit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-reddit.sub-reddit",
+      "inversedBy": "topics"
+    }
+  }
+}
