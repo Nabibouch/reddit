@@ -91,6 +91,12 @@
       "relation": "oneToMany",
       "target": "api::vote.vote",
       "mappedBy": "user"
+    },
+    "joined_sub": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-reddit.sub-reddit",
+      "inversedBy": "members"
     }
   }
 }

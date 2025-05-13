@@ -33,6 +33,18 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "sub_reddit"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "joined_sub"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "sub_reddit"
     }
   }
 }

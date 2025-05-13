@@ -4,7 +4,8 @@
   "info": {
     "singularName": "topic",
     "pluralName": "topics",
-    "displayName": "Topic"
+    "displayName": "Topic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +16,10 @@
       "required": true,
       "unique": true
     },
-    "post": {
+    "sub_reddit": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::post.post",
+      "target": "api::sub-reddit.sub-reddit",
       "inversedBy": "topics"
     }
   }

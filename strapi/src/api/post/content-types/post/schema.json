@@ -71,12 +71,6 @@
       "relation": "oneToOne",
       "target": "api::tag.tag",
       "mappedBy": "post"
-    },
-    "topics": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::topic.topic",
-      "mappedBy": "post"
     }
   }
 }
